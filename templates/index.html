@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Recognition</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-brain"></i> AI Image Recognition</h1>
+            <p>Upload an image and let our AI identify what's in it!</p>
+        </header>
+
+        <main class="main-content">
+            <div class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                        <h3>Drop your image here</h3>
+                        <p>or <span class="browse-text">browse</span> to choose a file</p>
+                        <input type="file" id="imageInput" accept="image/*" hidden>
+                    </div>
+                </div>
+                
+                <div class="file-info" id="fileInfo" style="display: none;">
+                    <div class="file-details">
+                        <i class="fas fa-file-image"></i>
+                        <span class="file-name" id="fileName"></span>
+                        <span class="file-size" id="fileSize"></span>
+                    </div>
+                    <button class="remove-file" id="removeFile">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <button class="predict-btn" id="predictBtn" disabled>
+                    <span class="btn-text">Analyze Image</span>
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <div class="image-preview">
+                    <img id="previewImage" alt="Uploaded image preview">
+                </div>
+                
+                <div class="prediction-results">
+                    <h3><i class="fas fa-chart-bar"></i> Prediction Results</h3>
+                    
+                    <div class="main-prediction">
+                        <div class="prediction-label">
+                            <span class="label-text" id="mainPrediction">-</span>
+                            <span class="confidence-badge" id="mainConfidence">0%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="top-predictions">
+                        <h4>Top 3 Predictions:</h4>
+                        <div class="predictions-list" id="predictionsList">
+                            <!-- Dynamic predictions will be inserted here -->
+                        </div>
+                    </div>
+                    
+                    <button class="new-prediction-btn" id="newPredictionBtn">
+                        <i class="fas fa-plus"></i>
+                        Analyze Another Image
+                    </button>
+                </div>
+            </div>
+
+            <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+                <div class="loading-content">
+                    <div class="spinner"></div>
+                    <h3>Analyzing Image...</h3>
+                    <p>Our AI is processing your image</p>
+                </div>
+            </div>
+
+            <div class="error-message" id="errorMessage" style="display: none;">
+                <div class="error-content">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Oops! Something went wrong</h3>
+                    <p id="errorText"></p>
+                    <button class="retry-btn" id="retryBtn">Try Again</button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Powered by TensorFlow & CIFAR-10 Dataset</p>
+            <div class="supported-classes">
+                <span>Supported Objects:</span>
+                <div class="class-tags">
+                    <span class="tag">Airplane</span>
+                    <span class="tag">Automobile</span>
+                    <span class="tag">Bird</span>
+                    <span class="tag">Cat</span>
+                    <span class="tag">Deer</span>
+                    <span class="tag">Dog</span>
+                    <span class="tag">Frog</span>
+                    <span class="tag">Horse</span>
+                    <span class="tag">Ship</span>
+                    <span class="tag">Truck</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
