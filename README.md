@@ -118,3 +118,6 @@ The application consists of two main parts: the AI model and the full-stack web 
 
 1. **The AI Model (main.py):** A Convolutional Neural Network (CNN) is built using TensorFlow/Keras. It's designed with data augmentation layers to prevent overfitting, three blocks of Conv2D and MaxPooling2D layers to learn visual features, and a "classifier head" of Dense layers to make the final prediction.  
 2. **The Web App (app.py \+ Frontend):** The Flask backend loads the pre-trained my\_image\_classifier.h5 model. The JavaScript frontend sends the user's uploaded image to the /predict API endpoint on the server. The Flask server then preprocesses the image (resizes to 32x32, normalizes pixels) and feeds it to the model. The model's prediction is formatted as JSON and sent back to the frontend, which then dynamically updates the page to display the results.
+
+## **Here is the demo of My Project.**
+![Demo of my project](demo.gif)
