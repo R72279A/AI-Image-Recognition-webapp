@@ -121,3 +121,6 @@ The application consists of two main parts: the AI model and the full-stack web 
 
 ## **Here is the demo of My Project.**
 ![Demo of my project](demo.gif)
+
+This project was built from the ground up as a learning journey into the world of deep learning and web deployment.  
+👉 You can read the full journey in my Medium article: [How I Built My First Image Recognition Model](https://medium.com/@jasrotia.yadunandan.singh584/how-can-you-build-your-own-image-recognition-model-as-your-first-ai-project-090a20c3ec3e).
